@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="zhFabColorPressed" format="color"/>
+    <attr name="zhFabColorNormal" format="color"/>
+    <attr name="zhFabIcon" format="reference"/>
+    <attr name="zhFabSize" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="mini" value="1"/>
+    </attr>
+    <attr name="zhFabStrokeVisible" format="boolean"/>
+
+    <declare-styleable name="ZhihuFab">
+        <attr name="zhFabColorPressed" />
+        <attr name="zhFabColorNormal"/>
+        <attr name="zhFabIcon"/>
+        <attr name="zhFabSize"/>
+        <attr name="zhFabStrokeVisible"/>
+    </declare-styleable>
+
+    <declare-styleable name="ZhihuMenuLayout">
+        <!--标签文字-->
+        <attr name="zhTagText" format="string"/>
+        <!--标签文字颜色-->
+        <attr name="zhTagTextColor" format="color"/>
+        <attr name="zhFabIcon"/>
+    </declare-styleable>
+    <!--动画模式-->
+    <attr name="zhAnimationMode">
+        <enum name="fade" value="0"/>
+        <enum name="scale" value="1"/>
+        <enum name="bounce" value="2"/>
+    </attr>
+
+    <!--菜单显示位置-->
+    <attr name="zhGrayity">
+        <enum name="leftBottom" value="0"/>
+        <enum name="rightBottom" value="1"/>
+    </attr>
+
+    <declare-styleable name="ZhihuFabLayout">
+        <!--变暗背景颜色-->
+        <attr name="zhBackgroundColor" format="color"/>
+        <!--动画时长-->
+        <attr name="zhAnimationDuration" format="integer"/>
+        <!--动画模式-->
+        <attr name="zhAnimationMode"/>
+        <!--显示位置-->
+        <attr name="zhGrayity"/>
+        <attr name="zhFabIcon"/>
+    </declare-styleable>
+
+</resources>

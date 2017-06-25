@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zhihu_fab_scale_behavior">com.yangsl.library.zhfab.ZhihuBehavior</string>
+</resources>

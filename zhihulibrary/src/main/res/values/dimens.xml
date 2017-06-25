@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_icon_size">24dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_stroke_width">1dp</dimen>
+</resources>
