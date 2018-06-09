@@ -1,4 +1,4 @@
-package com.yangsl.library.zhfab;
+package com.yangshanlin.library.zhfab;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,11 +11,13 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.yangsl.library.R;
+import com.yangshanlin.library.R;
 
 /**
  * 在TabTagLayout中需要一个能设置Text的CardView
  * 所以继承CardView实现一个TagView
+ *
+ * @author yangshanlin
  */
 public class ZhihuTagView extends CardView {
 
@@ -47,6 +49,7 @@ public class ZhihuTagView extends CardView {
     protected void setTextColor(@ColorInt int color) {
         mTextView.setTextColor(color);
     }
+
     protected void setText(String text) {
         mTextView.setText(text);
     }

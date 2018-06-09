@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yangsl.demo.MainActivity">
+    tools:context="com.yangshanlin.demo.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,20 +31,20 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-    <com.yangsl.library.zhfab.ZhihuFabLayout
+    <com.yangshanlin.library.zhfab.ZhihuFabLayout
         android:id="@+id/zhihu_fablayout"
         android:layout_width="wrap_content"
         app:layout_behavior="@string/zhihu_fab_scale_behavior"
         app:zhFabIcon="@drawable/ic_add_white_24dp"
         android:layout_height="wrap_content">
 
-        <com.yangsl.library.zhfab.ZhihuMenuLayout
+        <com.yangshanlin.library.zhfab.ZhihuMenuLayout
             android:layout_width="wrap_content"
             app:zhFabIcon="@drawable/ic_android_black_24dp"
             app:zhTagText="Android"
             android:layout_height="wrap_content">
 
-        </com.yangsl.library.zhfab.ZhihuMenuLayout>
-    </com.yangsl.library.zhfab.ZhihuFabLayout>
+        </com.yangshanlin.library.zhfab.ZhihuMenuLayout>
+    </com.yangshanlin.library.zhfab.ZhihuFabLayout>
 
 </android.support.design.widget.CoordinatorLayout>
