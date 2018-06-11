@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco-android'
 
 android {
     compileSdkVersion 27
@@ -16,6 +17,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 
@@ -29,4 +33,10 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.github.yangshanlin:ZhihuFab:1.0.0'
 //    compile project(':zhihulibrary')
+
+    implementation 'org.assertj:assertj-core:3.9.1'
+
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    //Jacoco 生成报告的依赖
+    androidTestImplementation'com.android.support.test:runner:1.0.2'
 }
