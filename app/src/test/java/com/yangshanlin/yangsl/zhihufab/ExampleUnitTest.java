@@ -1,4 +1,4 @@
-package com.yangsl.yangsl.zhihufab;
+package com.yangshanlin.yangsl.zhihufab;
 
 import org.junit.Test;
 

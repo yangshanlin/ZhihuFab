@@ -1,4 +1,4 @@
-package com.yangsl.library;
+package com.yangshanlin.yangsl.zhihufab;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yangsl.library.test", appContext.getPackageName());
+        assertEquals("com.yangsl.yangsl.zhihufab", appContext.getPackageName());
     }
 }

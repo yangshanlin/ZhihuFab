@@ -1,4 +1,4 @@
-package com.yangsl.library.zhfab;
+package com.yangshanlin.library.zhfab;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,22 +15,32 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yangsl.library.R;
+import com.yangshanlin.library.R;
 
 /**
  * 该ViewGroup是点击Tab后展开的条目
  * 组合一个TagView和一个FloatingActionButton
  * 默认Tag在左，button在右
+ *
+ * @author yangshanlin
  */
 public class ZhihuMenuLayout extends ViewGroup {
-    //menu fab背景颜色
+    /**
+     * menu fab背景颜色
+     */
     private int mFabMenubackground;
-    //tag标签文字
+    /**
+     * tag标签文字
+     */
     private String mTagText;
-    //标签文字颜色
+    /**
+     * 标签文字颜色
+     */
     @ColorInt
     private int mTagTextColor;
-    //弹出menu fab图片
+    /**
+     * 弹出menu fab图片
+     */
     private Drawable mMenuFabIcon;
     @DrawableRes
     private int mMenuDrawableResId = -1;

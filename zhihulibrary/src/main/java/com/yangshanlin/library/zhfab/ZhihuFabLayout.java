@@ -1,4 +1,4 @@
-package com.yangsl.library.zhfab;
+package com.yangshanlin.library.zhfab;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -25,65 +25,110 @@ import android.view.ViewGroup;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.yangsl.library.R;
+import com.yangshanlin.library.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+/**
+ * 自定义按钮父布局
+ *
+ * @author yangshanlin
+ */
 public class ZhihuFabLayout extends ViewGroup {
 
-    //显示位置位置
+    /**
+     * 显示位置位置
+     */
     public final static int GRAVITY_LEFT_BOTTOM = 0;
     public final static int GRAVITY_RIGHT_BOTTOM = 1;
 
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({GRAVITY_LEFT_BOTTOM, GRAVITY_RIGHT_BOTTOM})
-    public @interface ZHGravity{
+    public @interface ZHGravity {
     }
-    //菜单显示动画类型
+
+    /**
+     * 菜单显示动画类型
+     */
     public static final int ANI_FADE = 0;
     public static final int ANI_SCALE = 1;
     public static final int ANI_BOUNCE = 2;
+
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({ANI_FADE, ANI_SCALE, ANI_BOUNCE})
-    public @interface ZHANI{
+    public @interface ZHANI {
     }
 
-    //默认动画时长
+    /**
+     * 默认动画时长
+     */
     private static final int DEFAULT_ANIM_DURATION = 200;
 
-    //用于显示背景颜色的View
+    /**
+     * 用于显示背景颜色的View
+     */
     private View mBackgroundView;
-    //变暗背景颜色
+    /**
+     * 变暗背景颜色
+     */
     private int mBackgroundColor;
 
-    //开关FloatingActionButton
+    /**
+     * 开关FloatingActionButton
+     */
     private ZhihuFab mSwitchFab;
     private int mSwitchFabDrawableResId = -1;
-    //开关fab图片
+    /**
+     * 开关fab图片
+     */
     private Drawable mSwitchFabIcon;
     //开关fab颜色
 //    private ColorStateList mSwitchFabColor;
-    //动画时长
+
+    /**
+     * 动画时长
+     */
     private int mAnimationDuration;
-    //动画模式
+    /**
+     * 动画模式
+     */
     private int mAnimationMode;
 
-    //显示位置
+    /**
+     * 显示位置
+     */
     private int mGrayity;
 
-    //主Fab是否被点开
+    /**
+     * 主Fab是否被点开
+     */
     private boolean isMenuOpen = false;
-    //是否在执行背景动画
+    /**
+     * 是否在执行背景动画
+     */
     private boolean inBackgroundAni = false;
-    //是否在执行主Fab旋转动画
+    /**
+     * 是否在执行主Fab旋转动画
+     */
     private boolean inFabRotationAni = false;
 
-    //是否在执行menu动画
+    /**
+     * 是否在执行menu动画
+     */
     private boolean inFabMenuAni = false;
     private OnFabItemClickListener mOnFabItemClickListener;
 
+    /**
+     * 弹出按钮点击事件
+     */
     public interface OnFabItemClickListener {
+        /**
+         * 按钮点击事件回调
+         *
+         * @param view 点击的
+         * @param pos
+         */
         void onFabItemClick(ZhihuMenuLayout view, int pos);
     }
 
@@ -155,6 +200,7 @@ public class ZhihuFabLayout extends ViewGroup {
 
     /**
      * 添加一个menu
+     *
      * @param tagText
      * @param menuIconResId
      */
@@ -207,6 +253,7 @@ public class ZhihuFabLayout extends ViewGroup {
                 case MotionEvent.ACTION_UP:
                     intercepted = false;
                     break;
+                default:
             }
         }
         return intercepted;
@@ -285,6 +332,7 @@ public class ZhihuFabLayout extends ViewGroup {
                 case GRAVITY_RIGHT_BOTTOM:
                     cl = getMeasuredWidth() - width - dp2px(16);
                     ct = getMeasuredHeight() - fabHeight - (i - 1) * height - dp2px(16) - dp2px(8);
+                default:
             }
             child.layout(cl, ct, cl + width, ct + height);
             bindMenuEvents(child, i);
@@ -356,6 +404,7 @@ public class ZhihuFabLayout extends ViewGroup {
                 child.setScaleX(0f);
                 child.setScaleY(0f);
                 break;
+            default:
         }
     }
 
@@ -501,6 +550,7 @@ public class ZhihuFabLayout extends ViewGroup {
                 break;
             case ANI_SCALE:
                 scaleToShow();
+            default:
         }
     }
 
