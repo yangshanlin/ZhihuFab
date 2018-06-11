@@ -14,6 +14,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.content.res.AppCompatResources;
 import android.util.AttributeSet;
@@ -498,39 +499,39 @@ public class ZhihuFabLayout extends ViewGroup {
                 }
             });
             alpha.start();
-            return;
+        } else {
+            Animator circleAni = isMenuOpen
+                    ? ViewAnimationUtils.createCircularReveal(view, centerX, centerY, maxRadius, minRadius)
+                    : ViewAnimationUtils.createCircularReveal(view, centerX, centerY, minRadius, maxRadius);
+            AnimatorSet set = new AnimatorSet();
+            set.playTogether(alpha, circleAni);
+            set.setDuration(duration);
+            set.setInterpolator(new LinearInterpolator());
+            set.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    inBackgroundAni = true;
+                    view.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    inBackgroundAni = false;
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                    inBackgroundAni = false;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+
+                }
+            });
+            set.start();
         }
 
-        Animator circleAni = isMenuOpen
-                ? ViewAnimationUtils.createCircularReveal(view, centerX, centerY, maxRadius, minRadius)
-                : ViewAnimationUtils.createCircularReveal(view, centerX, centerY, minRadius, maxRadius);
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(alpha, circleAni);
-        set.setDuration(duration);
-        set.setInterpolator(new LinearInterpolator());
-        set.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-                inBackgroundAni = true;
-                view.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                inBackgroundAni = false;
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-                inBackgroundAni = false;
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-        set.start();
     }
 
     /**
